@@ -1,12 +1,10 @@
 // change the image on click
-
 const hats = ["images/blank.jpg", "images/magicHat.jpg", "images/topHat.jpg"]
+const currentHat = document.querySelector("#currentHat")
 let index = 0
 
 // previous hat
 function previousHat() {
-    const currentHat = document.querySelector("#currentHat")
-
     for (let i = 0; i < hats.length; i++) {
 
         // split URL http://127.0.0.1:5500/images/blank.jpg
@@ -24,13 +22,10 @@ function previousHat() {
     else {
         currentHat.src = hats[index - 1]
     }
-
 }
 
 // next hat
 function nextHat() {
-    const currentHat = document.querySelector("#currentHat")
-
     for (let i = 0; i < hats.length; i++) {
 
         // split URL http://127.0.0.1:5500/images/blank.jpg
@@ -50,6 +45,11 @@ function nextHat() {
     }
 }
 
+// reset to no hat 
+function reset(){
+    currentHat.src = hats[0]
+}
 
-
-// reset to default 
+// changing between dark and light mode
+//choice = prompt()
+//style.backgroundColor
