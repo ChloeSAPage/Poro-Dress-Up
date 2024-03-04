@@ -1,3 +1,11 @@
 h1, .btnimg, .reset {
     text-align: center;
 }
+
+.hidden {
+    display: none;
+}
+
+.poro{
+    height: 500px;
+}

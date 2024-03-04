@@ -1,5 +1,5 @@
 // change the image on click
-const hats = ["images/blank.jpg", "images/magicHat.jpg", "images/topHat.jpg"]
+const hats = ["images/Poro.png", "images/magicHat.jpg", "images/topHat.jpg"]
 const currentHat = document.querySelector("#currentHat")
 let index = 0
 
@@ -61,10 +61,15 @@ function resetNoHat(){
 
 
 function changePoroName(){
-    let name = document.querySelector("name").value
+    const nameForm = document.querySelector("#nameForm")
+    const name = document.querySelector("#name").value
+    nameForm.classList.add("hidden")
     // change welcome to poro dress up to poro's name
+
+
+    console.log("Poro's name has been changed")
 }
 
 // add dark mode and light mode using bool 
 
-let name = prompt("What is ur poro name")
+//let name = prompt("What is ur poro name")

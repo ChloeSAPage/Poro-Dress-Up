@@ -11,19 +11,19 @@
 <body>
     <h1> Welcome to Poro Dress Up!</h1>
 
-    <form action="">
+    <div id="nameForm">
         <label for="name">What is your Poro's name?</label>
-        <input type="text" id="name">
-        <button type="submit" onclick="changeName()">Submit</button>
-    </form>
+        <input type="text" id="name" autocomplete="off">
+        <button id="submitBtn" onclick="changePoroName()">Submit</button>
+    </div>
 
     <div class="btnimg">
         <button onclick="previousHat()">Previous ◀</button>
-        <img id="currentHat" src="images/blank.jpg" alt="">
+        <img class="poro" id="currentHat" src="images/Poro.png" alt="">
         <button onclick="nextHat()"> Next ▶</button>
     </div>
     <br>
-    <button class="reset" onclick="reset()"> Reset </button>
+    <button class="reset" onclick="resetNoHat()"> Reset </button>
 
 
     <script src="script.js"></script>
