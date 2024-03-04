@@ -53,15 +53,14 @@ function nextHat() {
     }
 }
 
-// Reset to no hat 
-function reset(){
+function resetNoHat(){
     currentHat.src = hats[0]
     alert("Poro's hat has been removed :(")
     console.log("Poro's hat has been removed :(")
 }
 
-// Change Poro's name
-function changeName(){
+
+function changePoroName(){
     let name = document.querySelector("name").value
     // change welcome to poro dress up to poro's name
 }
