@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1> Welcome to Poro Dress Up!</h1>
+    <h1 id="title"> Welcome to Poro Dress Up!</h1>
 
     <div id="nameForm">
         <label for="name">What is your Poro's name?</label>
@@ -17,13 +17,14 @@
         <button id="submitBtn" onclick="changePoroName()">Submit</button>
     </div>
 
-    <div class="btnimg">
+    <div class="btn-img">
         <button onclick="previousHat()">Previous ◀</button>
         <img class="poro" id="currentHat" src="images/Poro.png" alt="">
         <button onclick="nextHat()"> Next ▶</button>
     </div>
     <br>
     <button class="reset" onclick="resetNoHat()"> Reset </button>
+    <button class="colourmode" onclick="changeBGColour()"> 🌑 </button>
 
 
     <script src="script.js"></script>

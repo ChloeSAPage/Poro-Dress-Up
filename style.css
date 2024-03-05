@@ -1,4 +1,4 @@
-h1, .btnimg, .reset {
+h1, .btn-img, .reset{
     text-align: center;
 }
 
@@ -8,4 +8,9 @@ h1, .btnimg, .reset {
 
 .poro{
     height: 500px;
+}
+
+.dark-mode{
+    background-color: #262626;
+    color: white;
 }

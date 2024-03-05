@@ -75,3 +75,22 @@ function changePoroName(){
         alert("Poro has no name :(")
     }
 }
+
+
+// add dark mode and light mode using bool
+let isDarkMode = false
+const body = document.body
+
+function changeBGColour(){
+    if (isDarkMode === false){
+        body.classList.add("dark-mode")
+        isDarkMode = true
+        console.log("dark mode")
+    }
+
+    else if (isDarkMode === true){
+        body.classList.remove("dark-mode")
+        isDarkMode = false
+        console.log("light mode")
+    }
+}
