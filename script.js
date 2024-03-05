@@ -63,13 +63,15 @@ function resetNoHat(){
 function changePoroName(){
     const nameForm = document.querySelector("#nameForm")
     const name = document.querySelector("#name").value
-    nameForm.classList.add("hidden")
-    // change welcome to poro dress up to poro's name
+    const title = document.querySelector("#title")
 
+    if (name !== ""){
+        nameForm.classList.add("hidden")
+        title.textContent = name
+        console.log("Poro's name has been changed")
+    }
 
-    console.log("Poro's name has been changed")
+    else{
+        alert("Poro has no name :(")
+    }
 }
-
-// add dark mode and light mode using bool 
-
-//let name = prompt("What is ur poro name")
