@@ -6,11 +6,16 @@ h1, .btn-img, .reset{
     display: none;
 }
 
-.poro{
-    height: 500px;
+.porotop, .porobottom{
+    height: 30%;
 }
 
 .dark-mode{
     background-color: #262626;
     color: white;
+}
+
+button{
+    border-radius: 12px;
+    box-shadow: 1px 1px;
 }
