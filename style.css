@@ -6,8 +6,8 @@ h1, .btn-img, .reset{
     display: none;
 }
 
-.porotop, .porobottom{
-    height: 30%;
+.poro{
+    height: 500px;
 }
 
 .dark-mode{
