@@ -1,5 +1,6 @@
 // change the image on click
-const hats = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png"]
+const hats = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
+                "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentHat = document.querySelector("#currentHat")
 let index = 0
 
