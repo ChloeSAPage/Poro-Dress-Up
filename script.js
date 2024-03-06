@@ -55,11 +55,11 @@ function nextHat() {
 }
 
 
-
-function changePoroName(){
-    const nameForm = document.querySelector("#name-form")
+// Add name to the top of the webpage, removing title and input box
+const nameForm = document.querySelector("#name-form")
+const title = document.querySelector("#title")
+function setPoroName(){
     const name = document.querySelector("#name").value
-    const title = document.querySelector("#title")
     
     if (name !== ""){
         nameForm.classList.add("hidden")
@@ -67,7 +67,6 @@ function changePoroName(){
         title.classList.add("title")
         console.log("Poro's name has been changed")
     }
-    
     else{
         alert("Poro has no name :(")
     }
@@ -79,16 +78,16 @@ const body = document.body
 const btnChangeDarkMode = document.querySelector(".colour-mode")
 
 function changeDarkMode(){
-    body.classList.toggle("dark-mode")
-    body.classList.toggle("light-mode")
     if (isDarkMode === false){
         btnChangeDarkMode.textContent = "☀️"
+        body.style = "background-color: #334556; color: white"
         isDarkMode = true
         console.log("dark mode")
     }
     
     else if (isDarkMode === true){
         btnChangeDarkMode.textContent =  "🌑"
+        body.style = "background-color: #80add7; color: #334556"
         isDarkMode = false
         console.log("light mode")
     }
@@ -98,7 +97,7 @@ let hadDiscoAlert = false
 let discoTime
 
 function disco(){
-    
+    // ensure that alert always pops up on first click
     if (hadDiscoAlert === false){
         if (confirm("This involves flashing colours, to stop click the reset button. Are you sure you wanna do this?")){
             hadDiscoAlert = true
@@ -115,8 +114,17 @@ function disco(){
 
 function resetEverything(){
     currentHat.src = hats[0]
+    nameForm.classList.remove("hidden")
+    title.classList.remove("title")
+    title.textContent = "Welcome to Poro Dress Up!"
     clearTimeout(discoTime)
-    body.classList.add("light-mode")
-    alert("Reset Happened")
-    console.log("Reset Happened")
+    // reset background colour to what user chose
+    if (isDarkMode){
+        body.style = "background-color: #334556; color: white"
+    }
+    else{
+        body.style = "background-color: #80add7; color: #334556"
+    }
+    alert("Reset")
+    console.log("Reset")
 }
