@@ -65,7 +65,7 @@ function nextHat() {
 // Add name to the top of the webpage, removing title and input box
 function setPoroName(){
     const name = document.querySelector("#name").value
-    
+
     if (name !== ""){
         nameForm.classList.add("hidden")
         title.textContent = name
@@ -77,7 +77,7 @@ function setPoroName(){
     }
 }
 
-// add dark mode and light mode using bool
+// add dark mode and light mode
 function changeDarkMode(){
     if (isDarkMode === false){
         btnChangeDarkMode.textContent = "☀️"
@@ -94,7 +94,7 @@ function changeDarkMode(){
     }
 }
 
-
+// changes the background colour randomly
 function disco(){
     // ensure that alert always pops up on first click
     if (hadDiscoAlert === false){
