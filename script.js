@@ -1,8 +1,15 @@
-// change the image on click
 const hats = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
                 "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentHat = document.querySelector("#currentHat")
+const nameForm = document.querySelector("#name-form")
+const title = document.querySelector("#title")
+const body = document.body
+const btnChangeDarkMode = document.querySelector(".colour-mode")
 let index = 0
+let isDarkMode = false
+let hadDiscoAlert = false
+let discoTime
+
 
 // Get the previous hat in the array hats
 function previousHat() {
@@ -56,8 +63,6 @@ function nextHat() {
 
 
 // Add name to the top of the webpage, removing title and input box
-const nameForm = document.querySelector("#name-form")
-const title = document.querySelector("#title")
 function setPoroName(){
     const name = document.querySelector("#name").value
     
@@ -73,10 +78,6 @@ function setPoroName(){
 }
 
 // add dark mode and light mode using bool
-let isDarkMode = false
-const body = document.body
-const btnChangeDarkMode = document.querySelector(".colour-mode")
-
 function changeDarkMode(){
     if (isDarkMode === false){
         btnChangeDarkMode.textContent = "☀️"
@@ -93,8 +94,6 @@ function changeDarkMode(){
     }
 }
 
-let hadDiscoAlert = false
-let discoTime
 
 function disco(){
     // ensure that alert always pops up on first click
