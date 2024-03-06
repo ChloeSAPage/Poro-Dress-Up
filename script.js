@@ -95,12 +95,12 @@ function changeDarkMode(){
 }
 
 let hadDiscoAlert = false
-let discoTime = true
+let discoTime
 
 function disco(){
     
     if (hadDiscoAlert === false){
-        if (confirm("This involves flashing colours, to stop refresh the page. Are you sure you wanna do this?")){
+        if (confirm("This involves flashing colours, to stop click the reset button. Are you sure you wanna do this?")){
             hadDiscoAlert = true
         }
     }
@@ -109,13 +109,14 @@ function disco(){
         let num = (Math.random() * 0xfffff * 1000000).toString(16)
         let hex = num.slice(0, 6)
         body.style = `background-color:#${hex}`
-        setTimeout(disco, 400)
+        discoTime = setTimeout(disco, 400)
     }
 }
 
 function resetEverything(){
     currentHat.src = hats[0]
-    discoTime = false
-    alert("Poro's hat has been removed :(")
-    console.log("Poro's hat has been removed :(")
+    clearTimeout(discoTime)
+    body.classList.add("light-mode")
+    alert("Reset Happened")
+    console.log("Reset Happened")
 }
