@@ -1,6 +1,6 @@
-const hats = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
+const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
                 "images/PoroCowboy.png", "images/PoroWizard.png"]
-const currentHat = document.querySelector("#currentHat")
+const currentOutfit = document.querySelector("#current-outfit")
 const nameForm = document.querySelector("#name-form")
 const title = document.querySelector("#title")
 const body = document.body
@@ -11,62 +11,62 @@ let hadDiscoAlert = false
 let discoTime
 
 
-// Get the previous hat in the array hats
-function previousHat() {
-    // go through hats array
-    for (let i = 0; i < hats.length; i++) {
+// Get the previous outfit in the array outfits
+function previousOutfit() {
+    // go through outfits array
+    for (let i = 0; i < outfits.length; i++) {
 
-        // split URL to get the current hat image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        const currentHatSrc = currentHat.src.slice(22) // after slice -> images/blank.jpg
+        // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
+        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
 
-        // Find the index of the current hat in the array hats
-        if (currentHatSrc === hats[i]) {
+        // Find the index of the current outfit in the array outfits
+        if (currentOutfitSrc === outfits[i]) {
             index = i
         }
     }
 
-    // If Index is 0, we cannot go to the previous hat, so we take last item in the array hats
+    // If Index is 0, we cannot go to the previous outfit, so we take last item in the array outfits
     if (index === 0) {
-        currentHat.src = hats[hats.length - 1]
-        console.log("Hat changed to " + hats[hats.length - 1])
+        currentOutfit.src = outfits[outfits.length - 1]
+        console.log("outfit changed to " + outfits[outfits.length - 1])
     }
     // Otherwise we take the previous item in array
     else {
-        currentHat.src = hats[index - 1]
-        console.log("Hat changed to " + hats[index - 1])
+        currentOutfit.src = outfits[index - 1]
+        console.log("outfit changed to " + outfits[index - 1])
     }
 }
 
-// Get the next hat in the array hats
-function nextHat() {
-    for (let i = 0; i < hats.length; i++) {
-        // split URL to get the current hat image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        const currentHatSrc = currentHat.src.slice(22) // after slice -> images/blank.jpg
+// Get the next outfit in the array outfits
+function nextOutfit() {
+    for (let i = 0; i < outfits.length; i++) {
+        // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
+        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
 
-        // Find the index of the current hat in the array hats
-        if (currentHatSrc == hats[i]) {
+        // Find the index of the current outfit in the array outfits
+        if (currentOutfitSrc == outfits[i]) {
             index = i
         }
     }
     // If index is the last item in the array, we cannot go to the next item, so we get the first item
-    if (index === hats.length - 1) {
-        currentHat.src = hats[0]
-        console.log("Hat changed to " + hats[0])
+    if (index === outfits.length - 1) {
+        currentOutfit.src = outfits[0]
+        console.log("outfit changed to " + outfits[0])
     }
 
     // Otherwise we take the next item in array
     else {
-        currentHat.src = hats[index + 1]
-        console.log("Hat changed to " + hats[index + 1])
+        currentOutfit.src = outfits[index + 1]
+        console.log("outfit changed to " + outfits[index + 1])
     }
 }
 
 
-// Add name to the top of the webpage, removing title and input box
 function setPoroName(){
     const name = document.querySelector("#name").value
-
+    // Check if input was blank
     if (name !== ""){
+        // Add name to the top of the webpage, removing title and input box
         nameForm.classList.add("hidden")
         title.textContent = name
         title.classList.add("title")
@@ -79,6 +79,7 @@ function setPoroName(){
 
 // add dark mode and light mode
 function changeDarkMode(){
+    // if not in dark mode change to dark mode
     if (isDarkMode === false){
         btnChangeDarkMode.textContent = "☀️"
         body.style = "background-color: #334556; color: white"
@@ -86,6 +87,7 @@ function changeDarkMode(){
         console.log("dark mode")
     }
     
+    // If in dark mode change to light mode
     else if (isDarkMode === true){
         btnChangeDarkMode.textContent =  "🌑"
         body.style = "background-color: #80add7; color: #334556"
@@ -96,27 +98,35 @@ function changeDarkMode(){
 
 // changes the background colour randomly
 function disco(){
-    // ensure that alert always pops up on first click
+    // ensure that confirm always pops up on first click
     if (hadDiscoAlert === false){
         if (confirm("This involves flashing colours, to stop click the reset button. Are you sure you wanna do this?")){
             hadDiscoAlert = true
         }
     }
+    // if user clicks ok on confirm then disco time
     if (hadDiscoAlert){
         // get random hex value
         let num = (Math.random() * 0xfffff * 1000000).toString(16)
         let hex = num.slice(0, 6)
         body.style = `background-color:#${hex}`
+        // set new colour every 400 ms
         discoTime = setTimeout(disco, 400)
     }
 }
 
 function resetEverything(){
-    currentHat.src = hats[0]
+    // return to first outfit
+    currentOutfit.src = outfits[0]
+
+    // add the ability to change name back
     nameForm.classList.remove("hidden")
     title.classList.remove("title")
     title.textContent = "Welcome to Poro Dress Up!"
+
+    // stop disco function
     clearTimeout(discoTime)
+
     // reset background colour to what user chose
     if (isDarkMode){
         body.style = "background-color: #334556; color: white"
@@ -124,6 +134,6 @@ function resetEverything(){
     else{
         body.style = "background-color: #80add7; color: #334556"
     }
-    alert("Reset")
-    console.log("Reset")
+    alert("Reset Successful!")
+    console.log("Reset Successful!")
 }

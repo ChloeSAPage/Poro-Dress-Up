@@ -15,11 +15,6 @@ h1, .btn-img, #name-form, .buttons{
     color: #334556
 }
 
-.dark-mode{
-    background-color: #334556;
-    color: white;
-}
-
 button{
     border-radius: 12px;
     box-shadow: 1px 1px;
