@@ -8,10 +8,10 @@
     <title>Poro Dress Up</title>
 </head>
 
-<body>
+<body class="light-mode">
     <h1 id="title"> Welcome to Poro Dress Up!</h1>
 
-    <div id="nameForm">
+    <div id="name-form">
         <label for="name">What is your Poro's name?</label>
         <input type="text" id="name" autocomplete="off">
         <button id="submitBtn" onclick="changePoroName()">Submit</button>
@@ -23,8 +23,13 @@
         <button onclick="nextHat()"> Next ▶</button>
     </div>
     <br>
-    <button class="reset" onclick="resetNoHat()"> Reset </button>
-    <button class="colourmode" onclick="changeBGColour()"> 🌑 </button>
+
+    <div class="buttons">
+        <button class="reset" onclick="resetEverything()"> Reset </button>
+        <button class="colour-mode" onclick="changeDarkMode()"> 🌑 </button>
+        <button class="disco" onclick="disco()"> 🕺🪩 </button>
+    </div>
+
 
 
     <script src="script.js"></script>

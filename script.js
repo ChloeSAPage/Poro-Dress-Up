@@ -54,24 +54,20 @@ function nextHat() {
     }
 }
 
-function resetNoHat(){
-    currentHat.src = hats[0]
-    alert("Poro's hat has been removed :(")
-    console.log("Poro's hat has been removed :(")
-}
 
 
 function changePoroName(){
-    const nameForm = document.querySelector("#nameForm")
+    const nameForm = document.querySelector("#name-form")
     const name = document.querySelector("#name").value
     const title = document.querySelector("#title")
-
+    
     if (name !== ""){
         nameForm.classList.add("hidden")
         title.textContent = name
+        title.classList.add("title")
         console.log("Poro's name has been changed")
     }
-
+    
     else{
         alert("Poro has no name :(")
     }
@@ -80,17 +76,27 @@ function changePoroName(){
 // add dark mode and light mode using bool
 let isDarkMode = false
 const body = document.body
+const btnChangeDarkMode = document.querySelector(".colour-mode")
 
-function changeBGColour(){
+function changeDarkMode(){
+    body.classList.toggle("dark-mode")
+    body.classList.toggle("light-mode")
     if (isDarkMode === false){
-        body.classList.add("dark-mode")
+        btnChangeDarkMode.textContent = "☀️"
         isDarkMode = true
         console.log("dark mode")
     }
-
+    
     else if (isDarkMode === true){
-        body.classList.remove("dark-mode")
+        btnChangeDarkMode.textContent =  "🌑"
         isDarkMode = false
         console.log("light mode")
     }
+}
+
+function resetEverything(){
+    currentHat.src = hats[0]
+    discoTime = false
+    alert("Poro's hat has been removed :(")
+    console.log("Poro's hat has been removed :(")
 }

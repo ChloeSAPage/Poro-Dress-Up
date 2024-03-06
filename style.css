@@ -1,4 +1,4 @@
-h1, .btn-img, .reset{
+h1, .btn-img, #name-form, .buttons{
     text-align: center;
 }
 
@@ -10,12 +10,23 @@ h1, .btn-img, .reset{
     height: 500px;
 }
 
+.light-mode{
+    background-color: #80add7;
+    color: #334556
+}
+
 .dark-mode{
-    background-color: #262626;
+    background-color: #334556;
     color: white;
 }
 
 button{
     border-radius: 12px;
     box-shadow: 1px 1px;
+}
+
+.title{
+    font-size: 70px;
+    padding: 0px;
+    margin-bottom: 0;
 }
