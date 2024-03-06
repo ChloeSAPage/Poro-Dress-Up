@@ -94,6 +94,25 @@ function changeDarkMode(){
     }
 }
 
+let hadDiscoAlert = false
+let discoTime = true
+
+function disco(){
+    
+    if (hadDiscoAlert === false){
+        if (confirm("This involves flashing colours, to stop refresh the page. Are you sure you wanna do this?")){
+            hadDiscoAlert = true
+        }
+    }
+    if (hadDiscoAlert){
+        // get random hex value
+        let num = (Math.random() * 0xfffff * 1000000).toString(16)
+        let hex = num.slice(0, 6)
+        body.style = `background-color:#${hex}`
+        setTimeout(disco, 400)
+    }
+}
+
 function resetEverything(){
     currentHat.src = hats[0]
     discoTime = false
