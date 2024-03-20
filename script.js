@@ -1,5 +1,12 @@
-const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
-                "images/PoroCowboy.png", "images/PoroWizard.png"]
+const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)
+const outfits = [
+    baseURL + "images/Poro.png",
+    baseURL + "images/PoroFun.png",
+    baseURL + "images/PoshPoro.png",
+    baseURL + "images/PoroCowboy.png",
+    baseURL + "images/PoroWizard.png"
+]
+// const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentOutfit = document.querySelector("#current-outfit")
 const nameForm = document.querySelector("#name-form")
 const title = document.querySelector("#title")
@@ -15,10 +22,8 @@ let discoTime
 function previousOutfit() {
     // go through outfits array
     for (let i = 0; i < outfits.length; i++) {
-
-        // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
-
+        const currentOutfitSrc = currentOutfit.src
+        
         // Find the index of the current outfit in the array outfits
         if (currentOutfitSrc === outfits[i]) {
             index = i
@@ -40,8 +45,7 @@ function previousOutfit() {
 // Get the next outfit in the array outfits
 function nextOutfit() {
     for (let i = 0; i < outfits.length; i++) {
-        // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
+        const currentOutfitSrc = currentOutfit.src
 
         // Find the index of the current outfit in the array outfits
         if (currentOutfitSrc == outfits[i]) {
