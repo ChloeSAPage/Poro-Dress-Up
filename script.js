@@ -1,9 +1,5 @@
-const outfits = ["https://chloesapage.github.io/Poro-Dress-Up/images/Poro.png", 
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroFun.png",
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoshPoro.png",
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroCowboy.png",
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroWizard.png"]
-// const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", "images/PoroCowboy.png", "images/PoroWizard.png"]
+const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
+                "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentOutfit = document.querySelector("#current-outfit")
 const nameForm = document.querySelector("#name-form")
 const title = document.querySelector("#title")
@@ -21,10 +17,8 @@ function previousOutfit() {
     for (let i = 0; i < outfits.length; i++) {
 
         // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        // const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
+        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
 
-        const currentOutfitSrc = currentOutfit.src
-        
         // Find the index of the current outfit in the array outfits
         if (currentOutfitSrc === outfits[i]) {
             index = i
