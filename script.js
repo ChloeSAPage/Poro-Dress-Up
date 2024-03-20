@@ -1,8 +1,8 @@
-const outfits = ["https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/Poro.png", 
-                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoroFun.png",
-                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoshPoro.png",
-                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoroCowboy.png",
-                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoroWizard.png"]
+const outfits = ["https://chloesapage.github.io/Poro-Dress-Up/images/Poro.png", 
+                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroFun.png",
+                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoshPoro.png",
+                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroCowboy.png",
+                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroWizard.png"]
 // const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentOutfit = document.querySelector("#current-outfit")
 const nameForm = document.querySelector("#name-form")
