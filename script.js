@@ -22,10 +22,6 @@ let discoTime
 function previousOutfit() {
     // go through outfits array
     for (let i = 0; i < outfits.length; i++) {
-
-        // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        // const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
-
         const currentOutfitSrc = currentOutfit.src
         
         // Find the index of the current outfit in the array outfits
@@ -49,8 +45,7 @@ function previousOutfit() {
 // Get the next outfit in the array outfits
 function nextOutfit() {
     for (let i = 0; i < outfits.length; i++) {
-        // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
+        const currentOutfitSrc = currentOutfit.src
 
         // Find the index of the current outfit in the array outfits
         if (currentOutfitSrc == outfits[i]) {
