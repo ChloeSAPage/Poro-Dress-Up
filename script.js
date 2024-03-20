@@ -1,8 +1,11 @@
-const outfits = ["https://chloesapage.github.io/Poro-Dress-Up/images/Poro.png", 
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroFun.png",
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoshPoro.png",
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroCowboy.png",
-                 "https://chloesapage.github.io/Poro-Dress-Up/images/PoroWizard.png"]
+const baseURL = window.location.href.substring(0, window.location.href.lastIndexOf("/") + 1)
+const outfits = [
+    baseURL + "images/Poro.png",
+    baseURL + "images/PoroFun.png",
+    baseURL + "images/PoshPoro.png",
+    baseURL + "images/PoroCowboy.png",
+    baseURL + "images/PoroWizard.png"
+]
 // const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentOutfit = document.querySelector("#current-outfit")
 const nameForm = document.querySelector("#name-form")
