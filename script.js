@@ -1,5 +1,9 @@
-const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", 
-                "images/PoroCowboy.png", "images/PoroWizard.png"]
+const outfits = ["https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/Poro.png", 
+                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoroFun.png",
+                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoshPoro.png",
+                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoroCowboy.png",
+                 "https://github.com/ChloeSAPage/Poro-Dress-Up/tree/a0cdc0a4a7181640e3a665f2b7a9e7ed0fbb6c91/images/PoroWizard.png"]
+// const outfits = ["images/Poro.png", "images/PoroFun.png", "images/PoshPoro.png", "images/PoroCowboy.png", "images/PoroWizard.png"]
 const currentOutfit = document.querySelector("#current-outfit")
 const nameForm = document.querySelector("#name-form")
 const title = document.querySelector("#title")
@@ -17,8 +21,10 @@ function previousOutfit() {
     for (let i = 0; i < outfits.length; i++) {
 
         // split URL to get the current outfit image. This is the URL before slice -> http://127.0.0.1:5500/images/blank.jpg
-        const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
+        // const currentOutfitSrc = currentOutfit.src.slice(22) // after slice -> images/blank.jpg
 
+        const currentOutfitSrc = currentOutfit.src
+        
         // Find the index of the current outfit in the array outfits
         if (currentOutfitSrc === outfits[i]) {
             index = i
